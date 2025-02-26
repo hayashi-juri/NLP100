@@ -22,7 +22,7 @@ red, green, blue
 リストcolor_listの各要素を「, 」（カンマとスペース）で連結
 '''
 
-text_gen_c = cipher("Use this function to cipher and decipher an English message")
+text_gen_c = cipher("the quick brown fox jumps over the lazy dog")
 print(text_gen_c)
 
 text_gen_d = cipher(text_gen_c)
