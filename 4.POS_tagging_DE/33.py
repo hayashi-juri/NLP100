@@ -9,6 +9,7 @@ tmp = ""
 for morphs in gen_morphs.result: # 形態素解析した文
     for i in range(1, len(morphs)-1):
         # (det) A von (det) B
+        """
         if (morphs[i]["surface"] == "von" and morphs[i]["pos"] == "ADP"
             and (morphs[i-1]["pos"] == "NOUN") or ( morphs[i-1]["pos"] == "DET" and morphs[i-2]["pos"] == "NOUN")
             and (morphs[i+1]["pos"] == "NOUN") or ( morphs[i+1]["pos"] == "DET" and morphs[i+2]["pos"] == "NOUN")):
@@ -16,7 +17,23 @@ for morphs in gen_morphs.result: # 形態素解析した文
             tmp = morphs[i-2]["surface"] + " " + morphs[i-1]["surface"] + " von " + morphs[i + 1]["surface"] + morphs[i-2]["surface"]
 
             noun_von.add(tmp)
+        """
+        if morphs[i]["surface"] == "von":
+            if morphs[i-1]["pos"] == "NOUN":
+                noun_a = morphs[i-1]["surface"]
+            elif i > 1 and morphs[i-1]["pos"] == "DET" and morphs[i-2]["pos"] == "NOUN":
+                noun_a = morphs[i-1]["surface"] + " " + morphs[i-2]["surface"]
+            else:
+                continue
 
+            if morphs[i+1]["pos"] == "NOUN":
+                noun_b = morphs[i+1]["surface"]
+            elif i+2 < len(morphs) and morphs[i+1]["pos"] == "DET" and morphs[i+2]["pos"] == "NOUN":
+                noun_b = morphs[i+1]["surface"] + " " + morphs[i+2]["surface"]
+            else:
+                continue
+            noun_von.add(f"{noun_a} von {noun_b}")
+            
 
 print('A von B （所有）の出現数: {}'.format(len(noun_von)))
 print('===10個表示===')
