@@ -20,3 +20,5 @@ import Mecab
 A = Mecab.Tagger() ←　()にpathが入ることもある：Mecab.Tagger("-r /etc/mecabrc")
 text = "xxxxxxxxxx"
 result = A.parse(text)
+
+<https://nlp100.github.io/ja/ch04.html>
