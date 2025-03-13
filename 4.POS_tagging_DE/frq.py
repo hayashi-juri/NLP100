@@ -10,6 +10,13 @@ for morphs in gen_morphs.result:
 
 c = Counter(words)
 w_frq = c.most_common()
+#sorted_frq = sorted(c.values(), reverse = True)
+#print(c)
+#print(sorted_frq)
+#print(w_frq)
+#print("================")
+#frq_num = [w[1] for w in w_frq]
+#print(frq_num)
 
 words_v = []
 words_n = []
@@ -27,6 +34,7 @@ w_frq_v = c_v.most_common()
 c_n = Counter(words_n)
 w_frq_n = c_n.most_common()
 
+c
 w_frq
 w_frq_v
 w_frq_n

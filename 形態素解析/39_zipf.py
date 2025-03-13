@@ -21,6 +21,7 @@ for morphs in m.result:
             words.append(morph["base"])
 
 c = Counter(words) # 単語とその出現頻度のペアを保持
+print(c)
 sorted_frq = sorted(c.values(), reverse = True)
 # .values() は、その頻度の値（出現回数）のリストを返す
 # sorted() は、与えられたリストを昇順または降順に並べ替え
