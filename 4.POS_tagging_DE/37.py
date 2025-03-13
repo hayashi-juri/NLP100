@@ -1,7 +1,9 @@
-""" 37. 「猫」と共起頻度の高い上位10語
-「猫」とよく共起する(共起頻度が高い)10語と
+""" 37. Top-ten words co-occurring with "Märchen" and "Wolf". 
+Extract the list of words that co-occur with the word "Märchen" and "Wolf". 
+Visualize with a chart (e.g., bar chart) the top-ten words co-occurring with the word "Märchen", "Wolf" and their frequencies.
+
+「Märchen」, 「Wolf」とよく共起する(共起頻度が高い)10語と
 その出現頻度をグラフ(例えば棒グラフなど)で表示せよ．
--> Märchen, Wolf
 """
 
 from collections import Counter

@@ -1,3 +1,6 @@
+"""
+module for frequent words (all, verb, noun)
+"""
 import gen_morphs
 from collections import Counter
 
@@ -34,7 +37,6 @@ w_frq_v = c_v.most_common()
 c_n = Counter(words_n)
 w_frq_n = c_n.most_common()
 
-c
 w_frq
 w_frq_v
 w_frq_n
