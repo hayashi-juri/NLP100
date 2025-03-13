@@ -23,7 +23,9 @@ words_v = []
 words_n = []
 
 for morphs in gen_morphs.result:
+    #print(f"morphs: {morphs}")
     for morph in morphs:
+        #print(f"morph: {morph}")
         if morph["pos"] == "AUX" or morph["pos"] == "VERB":
             words_v.append(morph["base"])
         elif morph["pos"] == "NOUN":
